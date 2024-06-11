@@ -14,6 +14,10 @@ This project is divided into two main parts:
 1. **Backend**: This folder contains all the server-side code.
 2. **Frontend**: This folder contains all the client-side code.
 
+## Prerequisites
+- Docker: Ensure you have Docker installed on your system. You can download Docker from [here](https://www.docker.com/products/docker-desktop).
+
+
 ## Installation
 
 To get started with this project, follow these steps:
@@ -23,31 +27,29 @@ To get started with this project, follow these steps:
 git clone https://github.com/yourusername/your-repository.git
 ```
 
-### 2. Install Dependencies
-Frontend
-Navigate to the Frontend folder and install the dependencies:
+### 2. Build and Start the Containers
+Use Docker Compose to build and start both the frontend and backend services:
 ```sh
-cd Frontend
-npm install
+docker-compose up --build
 ```
-### 3. Backend
-Navigate to the Backend folder and install the dependencies:
+This command will:
 
-```sh
-cd ../Backend
-npm install
-```
+Build the Docker images for the frontend and backend using the specified Dockerfiles.
+Start the containers and map the appropriate ports.
 
 ## Usage
-### Start the Backend
-Navigate to the Backend folder and start the server using:
+The frontend application will be accessible at:
 
 ```sh
-node index.js
+http://localhost:5173
+```
+The backend server will be accessible at:
+```sh
+http://localhost:3000
 ```
 
-### Start the Frontend
-Navigate to the Frontend folder and start the development server using:
+### 3. Stopping the Services
+To stop the running containers, use:
 ```sh
-npm run dev
+docker-compose down
 ```
