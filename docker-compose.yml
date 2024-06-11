@@ -6,6 +6,8 @@ services:
       context: ./frontend
     ports:
       - "5173:5173"
+    # volumes:
+    #   - ./frontend:/frontend  # Mount the frontend directory
 
   backend:
     build:
@@ -14,3 +16,5 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
+    # volumes:
+    #   - ./backend:/backend  # Mount the backend directory

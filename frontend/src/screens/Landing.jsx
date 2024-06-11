@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import MovieCard from "../components/MovieCard";
+import Navbar from "../components/Navbar";
 
 const Landing = () => {
   const [movies, setMovies] = useState([1, 2, 3]);
@@ -37,8 +38,9 @@ const Landing = () => {
 
   return (
     <div className="justify-center mx-4 ">
-      <div className="text-center mb-4">
-        <h2 className="text-2xl font-bold">IMDB Homepage</h2>
+      <Navbar/>
+      <div className="text-center mb-6">
+        <h2 className="text-2xl font-bold">Top 20 movies</h2>
       </div>
       {movies.map((movie, index) => (
                 <div key={index} className="w-full px-10 mb-8">
@@ -51,12 +53,6 @@ const Landing = () => {
                 </div>
             ))}
       <div className="flex justify-center mt-10">
-      </div>
-
-      <div className="mt-10 flex justify-center">
-        <button onClick={()=>{navigate("/addmovie")}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">
-          Add New Movie
-        </button>
       </div>
     </div>
   );
